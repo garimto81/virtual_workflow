@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>버추얼 테이블, 소프트 콘텐츠, 버블 시퀀스 워크플로우</title>
+    <title>VT,SC,BS 워크플로우</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- Chosen Palette: Calm Neutral & Muted Blue -->
@@ -35,6 +35,14 @@
             opacity: 1;
             transform: scale(1.02);
             box-shadow: 0 0 0 3px #3b82f6, 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+        }
+        .highlight-label {
+            background-color: #dbeafe;
+            color: #1e40af;
+            padding: 0.125rem 0.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.875rem;
         }
     </style>
 </head>
@@ -74,76 +82,68 @@
 
                     <!-- Lane 1: 현장 팀 -->
                     <div class="row-span-1 flex items-center justify-center font-bold bg-gray-100 rounded-lg p-4">현장 팀</div>
-                    <div data-type="vt" class="swimlane-card bg-blue-50 p-4 rounded-lg">
+                    <div data-types="vt" class="swimlane-card bg-blue-50 p-4 rounded-lg">
                         <h4 class="font-bold text-blue-900">🔵 데이터 중심 기록</h4>
                         <ul class="list-disc list-inside mt-2 text-sm text-gray-700 space-y-1">
-                            <li><strong class="font-semibold">Henry:</strong> 정보 수집</li>
-                            <li>파일명, 핸드 히스토리, 자막 정보 등 상세 데이터 기록 자동화</li>
+                            <li><span class="highlight-label">Henry</span> 정보 수집</li>
+                            <li>파일명, 핸드 히스토리, 자막 정보 등 상세 데이터 기록 <span class="font-semibold text-blue-700">자동화</span></li>
                         </ul>
                     </div>
-                    <div data-type="sc" class="swimlane-card bg-green-50 p-4 rounded-lg">
+                    <div data-types="sc" class="swimlane-card bg-green-50 p-4 rounded-lg">
                         <h4 class="font-bold text-green-900">🟢 콘텐츠 중심 정리</h4>
                         <ul class="list-disc list-inside mt-2 text-sm text-gray-700 space-y-1">
-                             <li><strong class="font-semibold">Henry:</strong> 정보 수집</li>
-                             <li><strong class="font-semibold">Aiden:</strong> 큐시트, 자막 내용 등 전체 흐름 현장 정리</li>
+                             <li><span class="highlight-label">Henry</span> 정보 수집</li>
+                             <li><span class="highlight-label">Aiden</span> 큐시트, 자막 내용 등 전체 흐름 현장 정리</li>
                         </ul>
                     </div>
-                    <div data-type="bs" class="swimlane-card bg-red-50 p-4 rounded-lg">
+                    <div data-types="bs" class="swimlane-card bg-red-50 p-4 rounded-lg">
                          <h4 class="font-bold text-red-900">🔴 실시간 정보 전송</h4>
                          <ul class="list-disc list-inside mt-2 text-sm text-gray-700 space-y-1">
-                            <li><strong class="font-semibold">Mike/Henry:</strong> `WhatsApp`으로 플레이어 정보 전송</li>
-                            <li><strong class="font-semibold">Aiden:</strong> 스위처 컷 - 1차 영상 필터링</li>
+                            <li><span class="highlight-label">Mike/Henry</span> WhatsApp으로 플레이어 정보 전송</li>
+                            <li><span class="highlight-label">Aiden</span> 스위처 컷 - 1차 영상 필터링</li>
                         </ul>
                     </div>
 
                     <!-- Lane 2: 데이터/자막 팀 -->
                      <div class="row-span-1 flex items-center justify-center font-bold bg-gray-100 rounded-lg p-4">데이터/자막 팀</div>
-                     <div data-type="vt" class="swimlane-card bg-blue-50 p-4 rounded-lg">
-                        <h4 class="font-bold text-blue-900">🔵 체계적 분업</h4>
-                        <p class="mt-2 text-sm text-gray-700"><strong class="font-semibold">JUN:</strong> 큐시트 기반으로 자막 정보 정리</p>
+                     <div data-types="vt,sc" class="swimlane-card bg-purple-50 p-4 rounded-lg col-span-2">
+                        <h4 class="font-bold text-purple-900">🟣 공통 프로세스: 체계적 분업</h4>
+                        <p class="mt-2 text-sm text-gray-700"><span class="highlight-label">JUN</span> 큐시트 기반으로 모든 자막 정보 정리</p>
                     </div>
-                     <div data-type="sc" class="swimlane-card bg-green-50 p-4 rounded-lg">
-                        <h4 class="font-bold text-green-900">🟢 체계적 분업</h4>
-                        <p class="mt-2 text-sm text-gray-700"><strong class="font-semibold">JUN:</strong> 큐시트 기반으로 자막 정보 정리</p>
-                    </div>
-                     <div data-type="bs" class="swimlane-card bg-red-50 p-4 rounded-lg">
+                     <div data-types="bs" class="swimlane-card bg-red-50 p-4 rounded-lg">
                          <h4 class="font-bold text-red-900">🔴 실시간 데이터화</h4>
-                         <p class="mt-2 text-sm text-gray-700"><strong class="font-semibold">JUN:</strong> `WhatsApp` 정보를 큐시트로 실시간 정리</p>
+                         <p class="mt-2 text-sm text-gray-700"><span class="highlight-label">JUN</span> WhatsApp 정보를 큐시트로 실시간 정리</p>
                     </div>
 
                     <!-- Lane 3: 1차 편집 팀 -->
                      <div class="row-span-1 flex items-center justify-center font-bold bg-gray-100 rounded-lg p-4">1차 편집 팀</div>
-                     <div data-type="vt" class="swimlane-card bg-blue-50 p-4 rounded-lg">
-                         <h4 class="font-bold text-blue-900">🔵 1차 블럭 배치</h4>
-                         <p class="mt-2 text-sm text-gray-700"><strong class="font-semibold">DK (메인) / ZED (서브)</strong></p>
+                     <div data-types="vt,sc" class="swimlane-card bg-purple-50 p-4 rounded-lg col-span-2">
+                         <h4 class="font-bold text-purple-900">🟣 공통 프로세스: 1차 블럭 배치</h4>
+                         <p class="mt-2 text-sm text-gray-700"><span class="highlight-label">DK (메인) / ZED (서브)</span></p>
                     </div>
-                     <div data-type="sc" class="swimlane-card bg-green-50 p-4 rounded-lg">
-                         <h4 class="font-bold text-green-900">🟢 1차 블럭 배치</h4>
-                         <p class="mt-2 text-sm text-gray-700"><strong class="font-semibold">DK (메인) / ZED (서브)</strong></p>
-                    </div>
-                     <div data-type="bs" class="swimlane-card bg-red-50 p-4 rounded-lg">
+                     <div data-types="bs" class="swimlane-card bg-red-50 p-4 rounded-lg">
                          <h4 class="font-bold text-red-900">🔴 2차 필터링</h4>
-                         <p class="mt-2 text-sm text-gray-700"><strong class="font-semibold">DK:</strong> 핸드별 영상 분할 및 큐시트 기록</p>
+                         <p class="mt-2 text-sm text-gray-700"><span class="highlight-label">DK</span> 핸드별 영상 분할 및 큐시트 기록</p>
                     </div>
 
                     <!-- Lane 4: 최종 편집 팀 -->
                      <div class="row-span-1 flex items-center justify-center font-bold bg-gray-100 rounded-lg p-4">최종 편집 팀</div>
-                     <div data-type="vt" class="swimlane-card bg-blue-50 p-4 rounded-lg">
+                     <div data-types="vt" class="swimlane-card bg-blue-50 p-4 rounded-lg">
                         <h4 class="font-bold text-blue-900">🔵 최종 순서 확정 및 편집</h4>
                         <ul class="list-disc list-inside mt-2 text-sm text-gray-700 space-y-1">
-                            <li><strong class="font-semibold">HAROLD & DAVID:</strong> 최종 순서 협의</li>
-                            <li><strong class="font-semibold">HAROLD:</strong> 최종 편집 및 자막 삽입</li>
+                            <li><span class="highlight-label">HAROLD & DAVID</span> 최종 순서 협의</li>
+                            <li><span class="highlight-label">HAROLD</span> 최종 편집 및 자막 삽입</li>
                         </ul>
                     </div>
-                     <div data-type="sc" class="swimlane-card bg-green-50 p-4 rounded-lg">
+                     <div data-types="sc" class="swimlane-card bg-green-50 p-4 rounded-lg">
                          <h4 class="font-bold text-green-900">🟢 최종 편집</h4>
-                         <p class="mt-2 text-sm text-gray-700"><strong class="font-semibold">HAROLD:</strong> 최종 블럭 편집 및 자막 삽입</p>
+                         <p class="mt-2 text-sm text-gray-700"><span class="highlight-label">HAROLD</span> 최종 블럭 편집 및 자막 삽입</p>
                     </div>
-                     <div data-type="bs" class="swimlane-card bg-red-50 p-4 rounded-lg">
+                     <div data-types="bs" class="swimlane-card bg-red-50 p-4 rounded-lg">
                          <h4 class="font-bold text-red-900">🔴 최종 필터링 및 편집</h4>
                          <ul class="list-disc list-inside mt-2 text-sm text-gray-700 space-y-1">
-                            <li><strong class="font-semibold">HAROLD & DAVID:</strong> 3차 필터링</li>
-                            <li><strong class="font-semibold">HAROLD:</strong> 최종 편집</li>
+                            <li><span class="highlight-label">HAROLD & DAVID</span> 3차 필터링</li>
+                            <li><span class="highlight-label">HAROLD</span> 최종 편집</li>
                         </ul>
                     </div>
                 </div>
@@ -153,12 +153,12 @@
             <section id="subtitles" class="tab-content hidden">
                  <div class="bg-white p-6 md:p-8 rounded-xl shadow-md">
                      <h2 class="text-2xl font-bold mb-2">자막 시스템 표준화</h2>
-                     <p class="text-gray-600 mb-6">모든 정보는 '통합 큐시트'의 <strong class="font-semibold text-indigo-600">'자막 파트 전용 탭'</strong>에서 관리됩니다.</p>
+                     <p class="text-gray-600 mb-6">모든 정보는 '통합 큐시트'의 <span class="highlight-label">'자막 파트 전용 탭'</span>에서 관리됩니다.</p>
                      
                      <div class="space-y-6">
                         <!-- Profile Subtitles -->
                         <div>
-                            <h3 class="text-xl font-semibold text-gray-800 mb-3">A. 프로필 자막 (본사 사전 준비)</h3>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">본사 준비 자막: 프로필 정보</h3>
                             <div class="border-l-4 border-indigo-400 pl-4">
                                 <p><strong class="font-semibold">내용:</strong> 국가, 이름, 선수 정보 (브레이슬릿 획득 수, 총 상금 등)</p>
                                 <p><strong class="font-semibold">프로세스:</strong> 한국에서 사전 준비하며, 현장에서는 '프로필 자막' 요청만 기재합니다.</p>
@@ -167,7 +167,7 @@
 
                         <!-- On-site Subtitles -->
                         <div>
-                             <h3 class="text-xl font-semibold text-gray-800 mb-3">B. 현장 정보 자막 (소프트 콘텐츠 기준)</h3>
+                             <h3 class="text-xl font-semibold text-gray-800 mb-3">현장 기재 자막: 실시간 정보</h3>
                              <div class="grid md:grid-cols-2 gap-6">
                                  <div class="bg-gray-50 p-4 rounded-lg">
                                      <h4 class="font-bold mb-2">스택 정보</h4>
@@ -197,7 +197,7 @@
                          <h2 class="text-2xl font-bold mb-4">핵심 역할 분담 (R&R)</h2>
                          <div class="space-y-4">
                              <div>
-                                <h3 class="font-semibold text-lg">1차 배치 총괄 (버추얼 테이블 + 소프트 콘텐츠)</h3>
+                                <h3 class="font-semibold text-lg">1차 배치 총괄 (VT + SC)</h3>
                                 <p class="text-gray-600"><strong class="font-semibold">담당자:</strong> DK</p>
                                 <p class="text-sm">일관성 유지를 위해 1차 편집 및 배치를 주도합니다.</p>
                              </div>
@@ -209,23 +209,22 @@
                          </div>
                      </div>
                       <div class="bg-white p-6 md:p-8 rounded-xl shadow-md">
-                         <h2 class="text-2xl font-bold mb-4">공통점 분석</h2>
+                         <h2 class="text-2xl font-bold mb-4">워크플로우 공통점 및 이점</h2>
                          <ul class="space-y-3 list-disc list-inside">
-                             <li><strong class="font-semibold">통합 데이터 허브:</strong> 모든 정보는 통합 큐시트의 `FRONT 탭`으로 집결됩니다.</li>
-                             <li><strong class="font-semibold">1차 편집 총괄:</strong> VT와 SC의 1차 편집 및 배치는 DK가 주도합니다.</li>
-                             <li><strong class="font-semibold">최종 편집 총괄:</strong> 모든 콘텐츠의 최종 편집 및 보정은 HAROLD가 담당합니다.</li>
+                             <li><strong class="font-semibold">통합 데이터 허브:</strong> 모든 정보가 <span class="highlight-label">FRONT 탭</span>으로 집결되어, 정보 누락 및 혼선을 방지하고 일관성을 확보합니다.</li>
+                             <li><strong class="font-semibold">역할 표준화:</strong> <span class="highlight-label">DK</span>의 1차 편집과 <span class="highlight-label">HAROLD</span>의 최종 편집으로 역할을 표준화하여, 콘텐츠의 초기 완성도와 최종 퀄리티를 모두 보장합니다.</li>
                          </ul>
                      </div>
                      <div class="lg:col-span-2 bg-white p-6 md:p-8 rounded-xl shadow-md">
-                          <h2 class="text-2xl font-bold mb-4">차이점 분석</h2>
+                          <h2 class="text-2xl font-bold mb-4">콘텐츠 유형별 차이점</h2>
                           <dl class="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <div class="flex flex-col">
                                 <dt class="font-semibold text-lg text-gray-900">작업의 핵심</dt>
-                                <dd class="mt-1 text-gray-600">VT는 `데이터 정확성`, SC는 `콘텐츠 맥락`, BS는 `실시간성`이 가장 중요합니다.</dd>
+                                <dd class="mt-1 text-gray-600">VT는 <span class="highlight-label">데이터 정확성</span>, SC는 <span class="highlight-label">콘텐츠 맥락</span>, BS는 <span class="highlight-label">실시간성</span>이 가장 중요합니다.</dd>
                             </div>
                              <div class="flex flex-col">
                                 <dt class="font-semibold text-lg text-gray-900">현장 역할</dt>
-                                <dd class="mt-1 text-gray-600">BS는 `WhatsApp`을 이용한 실시간 정보 공유와 `스위처 컷 - 1차 영상 필터링`이라는 고유한 프로세스를 가집니다.</dd>
+                                <dd class="mt-1 text-gray-600">BS는 <span class="highlight-label">WhatsApp</span>을 이용한 실시간 정보 공유와 <span class="highlight-label">스위처 컷 - 1차 영상 필터링</span>이라는 고유한 프로세스를 가집니다.</dd>
                             </div>
                              <div class="flex flex-col">
                                 <dt class="font-semibold text-lg text-gray-900">프로세스 복잡도</dt>
@@ -270,9 +269,10 @@
 
                     allCards.forEach(card => {
                         card.classList.remove('highlighted', 'dimmed');
+                        const cardTypes = (card.dataset.types || "").split(',');
 
                         if (filterType !== 'all') {
-                            if (card.dataset.type === filterType) {
+                            if (cardTypes.includes(filterType)) {
                                 card.classList.add('highlighted');
                             } else {
                                 card.classList.add('dimmed');
