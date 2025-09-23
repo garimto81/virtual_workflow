@@ -155,8 +155,7 @@
                      <h2 class="text-2xl font-bold mb-2">자막 시스템 표준화</h2>
                      <p class="text-gray-600 mb-6">모든 정보는 '통합 큐시트'의 <span class="highlight-label">'자막 파트 전용 탭'</span>에서 관리됩니다.</p>
                      
-                     <div class="space-y-6">
-                        <!-- Profile Subtitles -->
+                     <div class="space-y-8">
                         <div>
                             <h3 class="text-xl font-semibold text-gray-800 mb-3">본사 준비 자막: 프로필 정보</h3>
                             <div class="border-l-4 border-indigo-400 pl-4">
@@ -165,24 +164,33 @@
                             </div>
                         </div>
 
-                        <!-- On-site Subtitles -->
                         <div>
                              <h3 class="text-xl font-semibold text-gray-800 mb-3">현장 기재 자막: 실시간 정보</h3>
                              <div class="grid md:grid-cols-2 gap-6">
                                  <div class="bg-gray-50 p-4 rounded-lg">
                                      <h4 class="font-bold mb-2">스택 정보</h4>
-                                     <p class="font-mono bg-gray-200 p-2 rounded text-sm">국기 / 이름 / CURRENT STACK - ???,??? (??BB)</p>
-                                     <p class="mt-2 text-sm text-gray-600"><strong class="font-semibold">예시:</strong> Bulgaria / ANATAS PAVLOV / CURRENT STACK - 920,000 (12BB)</p>
+                                     <pre class="font-mono bg-gray-200 p-3 rounded text-sm whitespace-pre-wrap">국기<br>이름<br>CURRENT STACK - ???,??? (??BB)</pre>
+                                     <p class="mt-2 text-sm text-gray-600"><strong class="font-semibold">예시:</strong></p>
+                                     <pre class="font-mono bg-gray-200 p-3 rounded text-sm whitespace-pre-wrap">Bulgaria<br>nANATAS PAVLOV<br>CURRENT STACK - 920,000 (12BB)</pre>
                                  </div>
                                  <div class="bg-gray-50 p-4 rounded-lg">
                                      <h4 class="font-bold mb-2">탈락 정보 (일반)</h4>
-                                     <p class="font-mono bg-gray-200 p-2 rounded text-sm">국기 / 이름 / ELIMINATED</p>
+                                     <pre class="font-mono bg-gray-200 p-3 rounded text-sm whitespace-pre-wrap">국기<br>이름<br>ELIMINATED</pre>
                                  </div>
                                   <div class="bg-gray-50 p-4 rounded-lg md:col-span-2">
                                      <h4 class="font-bold mb-2">탈락 정보 (In The Money)</h4>
-                                     <p class="font-mono bg-gray-200 p-2 rounded text-sm">국기 / 이름 / ELIMINATED IN ?TH PLACE ($상금)</p>
-                                     <p class="mt-2 text-sm text-gray-600"><strong class="font-semibold">예시:</strong> Russia / MIKHAIL ZAVOLOKA / ELIMINATED IN 158TH PLACE ($8,500)</p>
+                                     <pre class="font-mono bg-gray-200 p-3 rounded text-sm whitespace-pre-wrap">국기<br>이름<br>ELIMINATED IN ?TH PLACE ($상금)</pre>
                                      <p class="mt-1 text-xs text-red-600">※ 띄어쓰기 및 등수 영문 표기(1ST, 2ND, 3RD, 4TH...) 규칙을 준수해야 합니다.</p>
+                                 </div>
+                             </div>
+                        </div>
+
+                         <div>
+                             <h3 class="text-xl font-semibold text-gray-800 mb-3">현장 자막 요청 양식</h3>
+                             <div class="grid md:grid-cols-2 gap-6">
+                                 <div class="bg-gray-50 p-4 rounded-lg">
+                                     <h4 class="font-bold mb-2">프로필 자막의 경우</h4>
+                                     <pre class="font-mono bg-gray-200 p-3 rounded text-sm whitespace-pre-wrap">프로필 자막<br>이름</pre>
                                  </div>
                              </div>
                         </div>
